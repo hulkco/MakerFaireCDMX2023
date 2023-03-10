@@ -8,12 +8,11 @@ Se abordaran algunos conceptos básicos sobre BLE, desarrollando un programa que
 
 ### Conceptos básicos de Bluetooth de bajo consumo
 
+![](images/Logo-Bluetooth.png)
+
 Bluetooth Low Energy , o BLE, es un subconjunto del Bluetooth clásico y se introdujo junto con la especificación Bluetooth 4.0. A diferencia del Bluetooth clásico, BLE tiene un bajo consumo de energía y mantiene un rango similar.
 
-![](/images/bluetooth_logo.jpg)
-
 Los dispositivos que funcionan con BLE pueden tener dos funciones diferentes en una conexión, Dispositivo Central o Dispositivo Periférico ( Central Device o Peripheral Device ).
-
 
 Dispositivos centrales.- Por lo general son teléfonos celulares, tabletas, computadoras, etc. Estos son dispositivos centrales que reciben datos. 
 
@@ -54,7 +53,7 @@ Luego cargue el programa a continuación en el IDE de Arduino. También asegúre
 
 El programa básicamente establece los UUID del servicio de comunicación UART, lee la humedad y la temperatura del sensor DHT y transmite estos datos a la aplicación móvil. Los datos se envían en una sola variable, pero en formato CSV, con la temperatura y la humedad separadas por una coma.
 
-### **Aplicacion movil** 
+### **Aplicación movil** 
 
 Para que podamos ver los datos enviados por el ESP32 en nuestros teléfonos móviles, desarrollamos una aplicación utilizando la plataforma App Inventor. 
 
