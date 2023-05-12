@@ -2,9 +2,11 @@
 
 ### Objetivo: Prototipado rapido de una Aplicación BLE
 
-Es posible que haya oído hablar de Bluetooth Low Energy , Bluetooth Smart o BLE. Ha sido una tecnología muy aplicada a dispositivos como sensores de frecuencia cardíaca, podómetros, sensores de bicicletas, entre otros. En este post abordaremos el uso de Bluetooth Low Energy con ESP32.
+Es posible que haya oído hablar de Bluetooth Low Energy , Bluetooth Smart o BLE. Ha sido una tecnología muy aplicada a dispositivos como sensores de frecuencia cardíaca, podómetros, sensores de bicicletas, entre otros. En este taller se usara la biblioteca "[ArduinoBLE](https://www.arduino.cc/reference/en/libraries/arduinoble/)" la cual es compatible con varios microcontroladores, entre ellos el microcontrolador ESP32.
 
-Se abordaran algunos conceptos básicos sobre BLE, desarrollando un programa que utiliza las características BLE de ESP32, para enviar a una aplicación móvil, datos de temperatura y humedad, recolectados de un sensor DHT11. La aplicación móvil se desarrollará en MIT App Inventor.
+Se abordaran algunos conceptos básicos sobre Bluetooth de bajo consumo "BLE", se desarrollara un programa en Arduino IDE para ESP32, que envie a una aplicación móvil, los datos de temperatura y humedad recolectados de un sensor DHT11. 
+
+La aplicación móvil se desarrollará en MIT App Inventor.
 
 ### Conceptos básicos de Bluetooth de bajo consumo
 
@@ -24,19 +26,19 @@ GATT ( Perfil de atributo genérico ).- Es la forma en que se organizan los dato
 
 GATT se compone de uno o más servicios que a su vez se componen de características. 
 
-Existen especificaciones GATT estándar para los tipos de aplicaciones más comunes que se encuentran en el mercado. Varias de estas especificaciones se pueden encontrar en el sitio web oficial de Bluetooth . Las características a su vez son básicamente los valores mismos.
+Existen especificaciones GATT estándar para los tipos de aplicaciones más comunes que se encuentran en el mercado. Varias de estas especificaciones se pueden encontrar en el sitio [web oficial de Bluetooth](https://www.bluetooth.com/) . Las características a su vez son básicamente los valores mismos.
 
 Los servicios y funciones se identifican mediante un UUID.
 
-UUID: Son las siglas en inglés del Identificador Universalmente Único. El UUID es el equivalente a Folio Fiscal, está compuesta por 32 digítos hexadecimales, mostrados en 5 grupos separados por guiones.
+UUID: Son las siglas en inglés del Identificador Universal Único. El UUID está compuesta por 32 digítos hexadecimales, mostrados en 5 grupos separados por guiones.
 
 Por ejemplo, "0x180F" o "6E400001-B5A3-F393-E0A9-E50E24DCCA9E". 
 
 Lo importante es que podemos crear nuestras propias funciones personalizadas o incluso usar funciones existentes, como la detección del entorno.
 
-Para ser un poco más prácticos, veamos, por ejemplo, el servicio oficial de nivel de batería Battery Service. 
+Para ser un poco más prácticos, veamos, por ejemplo, el servicio oficial de nivel de batería "Battery Service". 
 
-Este servicio tiene un UUID de 0x180F y una característica llamada Nivel de batería de UUID 0x2A19. 
+Este servicio tiene un UUID de 0x180F y una característica llamada "Nivel de batería" con el UUID 0x2A19. 
 
 Imagina que hay un sensor BLE que mide el nivel de la batería (servicio) y que envía datos indicando el nivel de la batería (característica). 
 
@@ -47,9 +49,9 @@ Pensando en un ESP32, si tuviera programadas estas características, sería “u
 
 ### **Programa Bluetooth Low Energy con ESP32**
 
-Para programar el ESP32 usando el IDE de Arduino, siga las instrucciones de instalación de acuerdo a su sistema operativo. Asegúrese de que puede compilar y cargar cualquier programa para el ESP32, por ejemplo, un LED parpadeante.
+Para programar el ESP32 usando el IDE de Arduino, siga las instrucciones de instalación de acuerdo a su sistema operativo. Asegúrese de que puede compilar y cargar cualquier programa para el ESP32, por ejemplo, hacer parpadear un LED.
 
-Luego cargue el programa a continuación en el IDE de Arduino. También asegúrese de tener la biblioteca de sensores DHT instalada en su IDE.
+A continuación en el IDE de Arduino. También asegúrese de tener la biblioteca de sensores DHT instalada en su IDE.
 
 El programa básicamente establece los UUID del servicio de comunicación UART, lee la humedad y la temperatura del sensor DHT y transmite estos datos a la aplicación móvil. Los datos se envían en una sola variable, pero en formato CSV, con la temperatura y la humedad separadas por una coma.
 
