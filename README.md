@@ -1,6 +1,6 @@
 # BLE para todos
 
-### Objetivo: Prototipado rapido de una Aplicación BLE
+### Objetivo: Crear un prototipo rápido de una Aplicación móvil usando AppInventor, que muestre los datos obtenidos mediante una solución BLE (Bluetooth Low Energy) basada en Arduino.
 
 Es posible que haya oído hablar de Bluetooth Low Energy , Bluetooth Smart o BLE. Ha sido una tecnología muy aplicada a dispositivos como sensores de frecuencia cardíaca, podómetros, sensores de bicicletas, entre otros. En este taller se usara la biblioteca "[ArduinoBLE](https://www.arduino.cc/reference/en/libraries/arduinoble/)" la cual es compatible con varios microcontroladores, entre ellos el microcontrolador ESP32.
 
